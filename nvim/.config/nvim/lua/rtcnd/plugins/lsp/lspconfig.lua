@@ -5,6 +5,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		-- "saghen/blink.cmp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
+		"Z3rio/fivem-data.nvim",
 	},
 	config = function()
 		-- NOTE: LSP Keybinds
