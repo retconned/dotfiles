@@ -8,18 +8,12 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 source $ZSH/oh-my-zsh.sh
 
 # Example aliases
-alias zshconfig="code ~/.zshrc"
-alias tmuxconfig="code ~/.tmux.conf"
+alias zshconfig="nvim ~/.zshrc"
+alias nvimconfig="nvim  ~/.config/nvim"
 
 #Exa alias
-eza_params=('--git' '--icons' '--classify' '--group-directories-first' '--time-style=long-iso' '--group' '--color-scale')
-alias ls='eza $exa_params'
-alias l='eza --git-ignore $eza_params'
-alias ll='eza --all --header --long $eza_params'
-alias llm='eza --all --header --long --sort=modified $eza_params'
-alias la='eza -lbhHigUmuSa'
-alias lx='eza -lbhHigUmuSa@'
-alias lt='eza --tree $eza_params'
+eza_params=('--icons' '-l' '--no-permissions' '--no-user' '--header' '--long' '--sort=modified')
+alias ls='eza --icons  -l --no-permissions --no-user --header --long --sort=modified'
 alias tree='eza --tree $eza_params'
 
 # Misc aliases
@@ -29,10 +23,9 @@ alias a="cd ~/Dev/Archive"
 alias b="cd ~/Dev/Bounties"
 
 alias bat='bat --paging=never'
-alias starconfig="code ~/.config/starship.toml"
-alias air='$(go env GOPATH)/bin/air'
+alias starconfig="nvim ~/.config/starship.toml"
 
-alias lz="lazygit"
+alias lg="lazygit"
 
 alias n="nvim"
 
@@ -61,4 +54,7 @@ export PATH="/opt/homebrew/opt/jpeg/bin:$PATH"
 # java stuff
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=$JAVA_HOME/bin:$PATH
+
+# golang
+export PATH=$PATH:$(go env GOPATH)/bin # this enables go binaries to be run from anywhere
 
