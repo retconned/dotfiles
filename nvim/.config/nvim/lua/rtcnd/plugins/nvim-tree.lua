@@ -22,7 +22,7 @@ return {
 			renderer = {
 				root_folder_label = false,
 				highlight_git = true,
-				indent_markers = { enable = true },
+				indent_markers = { enable = false },
 				icons = {
 					glyphs = {
 						default = "󰈚",
@@ -38,14 +38,6 @@ return {
 				},
 			},
 		})
-
-		-- local function open_tab_silent(node)
-		-- 	local api = require("nvim-tree.api")
-		--
-		-- 	api.node.open.tab(node)
-		-- 	vim.cmd.tabprev()
-		-- end
 		vim.api.nvim_set_keymap("n", "<leader>-", ":NvimTreeToggle<cr>", { silent = true, noremap = true })
-		-- vim.keymap.set("n", "T", open_tab_silent, opts("Open Tab Silent"))
 	end,
 }
